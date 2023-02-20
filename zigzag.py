@@ -24,9 +24,9 @@ numZ = int(input("Numero de z:"))
 
 zString = "z"*numZ
 
-if (numDebut < numFin) :
+if (numDebut <= numFin) :
     
-    for i in range(numDebut, numFin):
+    for i in range(numDebut, numFin+1):
         if (i%2) == 0:
             print(str(i) + " " + zString + "zigzag")
         else:
