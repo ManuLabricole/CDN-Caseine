@@ -17,21 +17,22 @@
 # Si Laurence tape a , le programme lui demande un numéro de semaine n puis affiche les prévisions de stock de la semaine 1 à la semaine n.
 
 
-def computeWeeklyStock(week):
+def predictStock(week):
 
     stock = 1024
     stock_week_1 = 1024
 
-    for i in range(1, week):
+    for i in range(1, week+1):
         if (i % 4 == 0):
             stock += 500 - (20+i)
             print("Semaine " + str(i) + " : stock " + str(stock))
         else:
-            stock += stock - (20+i)
+            stock -= (20+i)
             print("Semaine " + str(i) + " : stock " + str(stock))
+    predictorWindowsApp()
 
 
-def predictStock(week):
+def computeMaximalStock(week):
 
     stock = 1024
     stock_week_1 = 1024
@@ -39,7 +40,7 @@ def predictStock(week):
     stockList = []
     stockList.append(stock_week_1)
 
-    for i in range(1, week):
+    for i in range(1, week+1):
         if (i % 4 == 0):
             stock += 500 - (20+i)
         else:
@@ -49,11 +50,7 @@ def predictStock(week):
     maxStock = max(stockList)
     print(maxStock)
 
-    return None
-
-
-def computeMaximalStock(n: int) -> int:
-    return None
+    predictorWindowsApp()
 
 
 def getMenuChoice(answer) -> str:
@@ -76,10 +73,15 @@ def getMenuChoice(answer) -> str:
     return
 
 
+# -----------------------------------------------------------
 # Display Menu
-print("a. Prévisions de stock")
-print("b. Stock maximal")
-print("(q pour quitter)")
+def predictorWindowsApp():
+    print("a. Prévisions de stock")
+    print("b. Stock maximal")
+    print("(q pour quitter)")
 
-answer = input()
-getMenuChoice()
+    answer = input()
+    getMenuChoice(answer)
+
+
+predictorWindowsApp()
