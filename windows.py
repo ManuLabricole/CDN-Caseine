@@ -82,4 +82,4 @@ print("b. Stock maximal")
 print("(q pour quitter)")
 
 answer = input()
-getMenuChoice(answer)
+getMenuChoice()
