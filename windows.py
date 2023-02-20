@@ -21,8 +21,9 @@ def predictStock(week):
 
     stock = 1024
     stock_week_1 = 1024
+    print("Semaine 1 : stock " + str(stock))
 
-    for i in range(1, week+1):
+    for i in range(2, week+1):
         if (i % 4 == 0):
             stock += 500 - (20+i)
             print("Semaine " + str(i) + " : stock " + str(stock))
@@ -34,6 +35,8 @@ def predictStock(week):
 
 def computeMaximalStock(week):
 
+    print(type(week))
+
     stock = 1024
     stock_week_1 = 1024
 
@@ -41,14 +44,18 @@ def computeMaximalStock(week):
     stockList.append(stock_week_1)
 
     for i in range(1, week+1):
-        if (i % 4 == 0):
+        if i == 1:
+            pass
+        elif (i % 4 == 0):
             stock += 500 - (20+i)
         else:
-            stock += stock - (20+i)
+            stock -= (20+i)
+
         stockList.append(stock)
 
     maxStock = max(stockList)
-    print(maxStock)
+    index = stockList.index(maxStock)
+    print("" + str(maxStock) + " , atteint en semaine " + str(index+1))
 
     predictorWindowsApp()
 
