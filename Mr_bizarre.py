@@ -24,6 +24,7 @@
 # Ecrire la fonction jeudi. Par exemple, jeudi("merci") vaut "mercimerci", jeudi("bonbon") vaut "", jeudi("comment") vaut "comment".
 
 # Le vendredi, il faut que les mots soient écrits normalement. Et heureusement, il n’y a pas de journal le week-end
+
 # Ecrire une fonction transforme(mot, num_jour) qui prend en argument un mot et le numéro du jour (1 pour lundi, 2 pour mardi, etc....)
 # et qui renvoie le mot transformé selon la règle du jour correspondant.
 # (Exercice proposé par Aurélie Lagoutte)
@@ -57,14 +58,29 @@ def jeudi(word):
     return moduloNum*word
 
 
+def vendredi(word):
+    return word
+
+
+def transform(word, day):
+    if day == 1:
+        print(lundi(word))
+    elif day == 2:
+        print(mardi(word))
+    elif day == 3:
+        print(mercredi(word))
+    elif day == 4:
+        print(jeudi(word))
+    elif day == 5:
+        print(vendredi(word))
+    else:
+        print("c'est le week-end")
+
+
 if __name__ == "__main__":  # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
     # Utilisez-le pour tester votre programme en faisant
     # les appels de votre choix.
     # Respectez bien ce niveau d'identation.
     print("Debut du prog. principal")
-
-    print(lundi("bonjour"))
-    print(mardi("deux"))
-    print(mercredi("impairetrr"))
-    print(jeudi("comment"))
+    transform("voiture", 2)
