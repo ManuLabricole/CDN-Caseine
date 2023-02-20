@@ -3,25 +3,25 @@
 # Ensuite Save + Run puis Save + Evaluate
 # Pour des raisons techniques, laissez une ligne blanche avant de commencer votre programme.
 
-def maximum(num1, num2):
+def maximum(num1: float, num2: float) -> float:
     if num1 > num2:
-        return int(num1)
+        return num1
     elif num1 < num2:
-        return int(num2)
+        return num2
     else:
         return None
 
 
-def maximum3(num1, num2, num3):
-    return int(maximum(num1=maximum(num1=num1, num2=num2), num2=num3))
+def maximum3(num1: float, num2: float, num3: float) -> float:
+    return maximum(num1=maximum(num1=num1, num2=num2), num2=num3)
 
 
 def maximum3_input():
-    num1 = input("num 1 : ")
-    num2 = input("num 2 : ")
-    num3 = input("num 3 : ")
+    num1 = float(input("num 1 : "))
+    num2 = float(input("num 2 : "))
+    num3 = float(input("num 3 : "))
 
-    return int(maximum3(num1=num1, num2=num2, num3=num3))
+    return maximum3(num1=num1, num2=num2, num3=num3)
 
 
 if __name__ == "__main__":  # NE PAS SUPPRIMER CETTE LIGNE
