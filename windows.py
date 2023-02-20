@@ -54,7 +54,7 @@ def computeMaximalStock(week):
     maxStock = max(stockList)
     index = stockList.index(maxStock)
 
-    print("" + str(maxStock) + " , atteint en semaine " + str(index+1))
+    print("" + str(maxStock) + " , atteint en semaine " + str(index))
 
     predictorWindowsApp()
 
