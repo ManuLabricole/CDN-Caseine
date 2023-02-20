@@ -56,11 +56,11 @@ def computeMaximalStock(week):
 def getMenuChoice(answer) -> str:
 
     if answer == "a":
-        week = int(input("Week number for stock amount ? : "))
+        week = int(input("Choisissez une semaine : "))
         predictStock(week)
 
     elif answer == "b":
-        week = int(input("Week number for max stock in between ? : "))
+        week = int(input("Choisissez une semaine : "))
         computeMaximalStock(week)
 
     elif answer == "q":
