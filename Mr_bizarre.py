@@ -52,6 +52,11 @@ def mercredi(word):
         return "impair"
 
 
+def jeudi(word):
+    moduloNum = len(word) % 3
+    return moduloNum*word
+
+
 if __name__ == "__main__":  # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
     # Utilisez-le pour tester votre programme en faisant
@@ -62,3 +67,4 @@ if __name__ == "__main__":  # NE PAS SUPPRIMER CETTE LIGNE
     print(lundi("bonjour"))
     print(mardi("deux"))
     print(mercredi("impairetrr"))
+    print(jeudi("comment"))
