@@ -42,11 +42,14 @@ def mardi(word):
         for i in range(1, 3):
             transformedWord += "," + word
 
-        return transformedWord
+    return transformedWord
 
 
-def mercredi():
-    return
+def mercredi(word):
+    if len(word) % 2 == 0:
+        return word
+    else:
+        return "impair"
 
 
 if __name__ == "__main__":  # NE PAS SUPPRIMER CETTE LIGNE
@@ -57,4 +60,5 @@ if __name__ == "__main__":  # NE PAS SUPPRIMER CETTE LIGNE
     print("Debut du prog. principal")
 
     print(lundi("bonjour"))
-    print(mardi("impaire"))
+    print(mardi("deux"))
+    print(mercredi("impairetrr"))
