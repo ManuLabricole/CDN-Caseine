@@ -62,17 +62,17 @@ def vendredi(word):
     return word
 
 
-def transform(word, day):
+def transforme(word, day):
     if day == 1:
-        print(lundi(word))
+        return lundi(word)
     elif day == 2:
-        print(mardi(word))
+        return mardi(word)
     elif day == 3:
-        print(mercredi(word))
+        return mercredi(word)
     elif day == 4:
-        print(jeudi(word))
+        return jeudi(word)
     elif day == 5:
-        print(vendredi(word))
+        return vendredi(word)
     else:
         print("c'est le week-end")
 
@@ -83,4 +83,4 @@ if __name__ == "__main__":  # NE PAS SUPPRIMER CETTE LIGNE
     # les appels de votre choix.
     # Respectez bien ce niveau d'identation.
     print("Debut du prog. principal")
-    transform("voiture", 2)
+    transforme("unique", 1)
