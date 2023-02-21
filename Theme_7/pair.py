@@ -5,8 +5,38 @@
 
 
 
+def is_pair(num:int) -> bool:
+    
+    if num < 0 :
+        raise ValueError("Should be integer positive")
+    
+    if num%2 == 0:
+        return True
+    else:
+        return False
 
-        
+def make_pair_list(numList:list) -> list:
+    
+    numListCopy = numList.copy()
+    pairList = []
+    
+    for el in numListCopy:
+        if is_pair(int(el)):
+            pairList.append(el)
+    
+    return pairList
+
+def somme_pairs(numList:list) -> int:
+    sumPair = 0
+    numListCopy = numList.copy()
+    
+    pairList = make_pair_list(numListCopy)
+    sumPair = sum(pairList)
+    
+    return sumPair
+
+def nb_pair_element(numList:list) -> int:
+    numListCopy = numList.copy()
         
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
@@ -14,6 +44,9 @@ if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # les appels de votre choix.
     # Respectez bien ce niveau d'identation.
     print("Debut du prog. principal")
+    print(is_pair(8))
+    print(make_pair_list([4, 5, 10, 12, 7, 13, 20]))
+    print(somme_pairs([4, 7, 12, 0, 21, 5]))
 
 
 ## Ci-dessous: copie des exemples
