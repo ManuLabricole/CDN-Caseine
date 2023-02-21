@@ -47,6 +47,16 @@ def est_premier(num:int) -> bool:
             else:
                 pass# print("Premier, non divisible par :" + str(i))
         return True
+    
+def sphinx_aime(p):
+    if est_premier(p) and est_premier(p+2):
+        return True
+    else:
+        return False
+    
+def code_hall(p):
+    if sphinx_aime(p):
+        return p
 
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
