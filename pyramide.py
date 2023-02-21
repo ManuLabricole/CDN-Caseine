@@ -48,16 +48,26 @@ def est_premier(num:int) -> bool:
                 pass# print("Premier, non divisible par :" + str(i))
         return True
     
-def sphinx_aime(p):
+def sphinx_aime(p:int) -> bool:
     if est_premier(p) and est_premier(p+2):
         return True
     else:
         return False
     
-def code_hall(p):
+def code_hall(p) -> int:
     while (sphinx_aime(p) == False):
         p += 1
     return p
+
+def est_puissance2(num : int) -> bool:
+    num = float(num)
+    while ( num.is_integer() and num > 1):
+        num = num/2
+
+    if num == 1:
+        return True
+    else:
+        return False
 
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
@@ -72,4 +82,4 @@ if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Vous devez juste appuyer sur Entree lorsque l'on vous le demande.
     import pyramide
     # pyramide.entre() # Vous pouvez commenter cette ligne si vous le voulez.
-    print(est_premier(18))
+    print(est_puissance2(12))
