@@ -13,15 +13,38 @@
 
 #  (Exercice proposé par Aurélie Lagoutte)
 
-def prix_menu(menuName:str, avecBoisson:bool=False, nb_supplement:int=0) -> float:
-    return 
 
-if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
-    # Votre programme principal ne sera pas évalué.
-    # Utilisez-le pour tester votre programme en faisant
-    # les appels de votre choix.
-    # Respectez bien ce niveau d'identation.
+
+def prix_menu(menuName:str, avecBoisson:bool=False, nb_supplement:int=0) -> float:
+
+    menuDict = {
+    "Basique":float(9),
+    "Gourmand":float(15),
+    "Complet":float(19),
+    "Boisson":float(4),
+    "Supplement":float(1.5)
+    }
+    
+    prix = menuDict[menuName]
+    prix += menuDict["Supplement"]*nb_supplement
+    
+    if avecBoisson:
+        prix += menuDict["Boisson"]
+    else:
+        pass
+    
+    return prix
+
+def table_Dupont() -> float:
+    prix_menu("Basique")
+    prix_menu("Gourmand", avecBoisson=True)
+    prix_menu("Basique", nb_supplement=2)
+    prix_menu("Basique", avecBoisson=True, nb_supplement=1)
+
+if __name__=="__main__":
     print("Debut du prog. principal")
+    print(prix_menu("Basique", True))
+    
 
 
 
