@@ -55,11 +55,14 @@ def sphinx_aime(p:int) -> bool:
         return False
     
 def code_hall(p) -> int:
+    
     while (sphinx_aime(p) == False):
         p += 1
+        
     return p
 
 def est_puissance2(num : int) -> bool:
+    
     num = float(num)
     while ( num.is_integer() and num > 1):
         num = num/2
@@ -68,6 +71,20 @@ def est_puissance2(num : int) -> bool:
         return True
     else:
         return False
+    
+def osiris_aime(n : int) -> bool:
+    
+    if est_puissance2(n+1):
+        if n%5 == 3:
+            return True
+    return False
+
+def code_tresor(num : int) -> int:
+    
+    while (osiris_aime(num) == False):
+        num += 1
+        
+    return num
 
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
@@ -82,4 +99,4 @@ if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Vous devez juste appuyer sur Entree lorsque l'on vous le demande.
     import pyramide
     # pyramide.entre() # Vous pouvez commenter cette ligne si vous le voulez.
-    print(est_puissance2(12))
+    print(osiris_aime(31))
