@@ -18,7 +18,7 @@
 # renvoie le tarif du billet. Si le trajet ou la carte demandé(e) est inconnu(e), un message d'erreur s'affichera et la fonction 
 # renverra None.
 
-def tarif_carte(carte:str) -> float:
+def tarif_carte(carte):
     if carte == "Jeune":
         return float(50)
     elif carte == "Senior":
@@ -27,7 +27,7 @@ def tarif_carte(carte:str) -> float:
         print("Carte inconnue")
         return None
 
-def reduc_carte(carte:str, periode:str) -> float:
+def reduc_carte(carte, periode):
     
     if carte == "Jeune":
         if periode == "bleue":
@@ -35,17 +35,19 @@ def reduc_carte(carte:str, periode:str) -> float:
         elif periode == "blanche":
             return float(0.3)
         
-    elif carte == "Senior":
+    if carte == "Senior":
         if periode == "bleue":
             return float(0.5)
         elif periode == "blanche":
             return float(0.25)
+        
     else:
         print("Carte inconnue")
         return None
     
 def plein_tarif(city1, city2):
     city = [city1, city2]
+    
     if("Grenoble" in city and "Lyon" in city): 
         return float(20)
         
@@ -64,15 +66,40 @@ def reduc_modifiable(is_modifiable:bool) -> float:
     else:
         return float(0.1)
     
-def tarif_billet(city1:str, city2:str, modifiable=True:bool, ):
+def tarif_billet(city1, city2, modifiable=True, carte=None, periode=None):
     
-    return prix
+    prixBillet = plein_tarif(city1=city1, city2=city2)
+    prixCarte = tarif_carte(carte=carte)
+    reducCarte = reduc_carte(carte=carte, periode=periode)
+    reducModifiable = reduc_modifiable(is_modifiable=modifiable)
+    
+    if prixBillet is not None:
+        prix = prixBillet
         
+        if prixCarte is not None and reducCarte is not None:
+            prix -= prix*reducCarte
+        else:
+            pass
+        
+        if reducModifiable is not None:
+            prix -= prix*reducModifiable
+            
+        return prix    
+        
+    else:
+        return None    
+
+    print("-----------------")
+    print(prixBillet)
+    print(prixCarte)       
+    print(reducCarte)
+    print(reducModifiable)    
+            
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
     # Utilisez-le pour tester votre programme en faisant
     # les appels de votre choix.
     # Respectez bien ce niveau d'identation.
     print("Debut du prog. principal")
-    plein_tarif("Paris", "Lyon")
-    plein_tarif("Grenoble", "Grenoble")
+    
+    print(tarif_billet("Grenoble", "Lyon", modifiable=True, carte=None, periode=None))
