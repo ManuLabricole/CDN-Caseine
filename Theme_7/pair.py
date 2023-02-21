@@ -23,8 +23,11 @@ def make_pair_list(numList:list) -> list:
     for el in numListCopy:
         if is_pair(int(el)):
             pairList.append(el)
-    
-    return pairList
+            
+    if len(pairList) > 0:
+        return pairList
+    else:
+        return None
 
 def somme_pairs(numList:list) -> int:
 
@@ -39,21 +42,30 @@ def nb_elem_pairs(numList:list) -> int:
     numListCopy = numList.copy()
     pairList = make_pair_list(numListCopy)
     
-    return len(pairList)
+    if pairList is not None:
+        return len(pairList)
+    else:
+        return 0
 
 def max_pair(numList:list) -> list:
     
     numListCopy = numList.copy()
     pairList = make_pair_list(numListCopy)
     
-    return max(pairList)
+    if pairList is not None:
+        return max(pairList)
+    else:
+        return None
 
 def min_pair(numList:list) -> list:
     
     numListCopy = numList.copy()
     pairList = make_pair_list(numListCopy)
     
-    return min(pairList)
+    if pairList is not None:
+        return min(pairList)
+    else:
+        return None
     
         
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
