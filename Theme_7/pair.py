@@ -69,13 +69,31 @@ def min_pair(numList:list) -> list:
     
 def indice_de(position:int, numList:list):
     numListCopy = numList.copy()
-    if position in numListCopy
+    if position in numListCopy:
         return numListCopy.index(int(position))
     
     else:
         return None
     
-        
+def trouve_premier_pair(numList:list) -> list:
+    
+    for el in numList:
+        if is_pair(el):
+            return el
+    else:
+        return None
+    
+def extrait_pairs(numList:list) -> list:
+    
+    listPair = make_pair_list(numList)
+    
+    if listPair is not None:
+        return listPair
+    else:
+        return []
+
+
+
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
     # Utilisez-le pour tester votre programme en faisant
