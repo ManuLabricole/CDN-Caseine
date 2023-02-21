@@ -47,7 +47,13 @@ def max_pair(numList:list) -> list:
     pairList = make_pair_list(numListCopy)
     
     return max(pairList)
+
+def min_pair(numList:list) -> list:
     
+    numListCopy = numList.copy()
+    pairList = make_pair_list(numListCopy)
+    
+    return min(pairList)
     
         
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
