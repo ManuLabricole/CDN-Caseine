@@ -67,6 +67,14 @@ def min_pair(numList:list) -> list:
     else:
         return None
     
+def indice_de(position:int, numList:list):
+    numListCopy = numList.copy()
+    if position in numListCopy
+        return numListCopy.index(int(position))
+    
+    else:
+        return None
+    
         
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
@@ -77,6 +85,8 @@ if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     print(is_pair(8))
     print(make_pair_list([4, 5, 10, 12, 7, 13, 20]))
     print(somme_pairs([4, 7, 12, 0, 21, 5]))
+    
+    print(indice_de(32, [4, 6, 102, 5, 25, 14, 50, 16]))
 
 
 ## Ci-dessous: copie des exemples
