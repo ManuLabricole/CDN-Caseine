@@ -27,16 +27,28 @@ def make_pair_list(numList:list) -> list:
     return pairList
 
 def somme_pairs(numList:list) -> int:
-    sumPair = 0
-    numListCopy = numList.copy()
-    
-    pairList = make_pair_list(numListCopy)
-    sumPair = sum(pairList)
-    
-    return sumPair
 
-def nb_pair_element(numList:list) -> int:
     numListCopy = numList.copy()
+    pairList = make_pair_list(numListCopy)
+    
+    return sum(pairList)
+    
+
+def nb_elem_pairs(numList:list) -> int:
+    
+    numListCopy = numList.copy()
+    pairList = make_pair_list(numListCopy)
+    
+    return len(pairList)
+
+def max_pair(numList:list) -> list:
+    
+    numListCopy = numList.copy()
+    pairList = make_pair_list(numListCopy)
+    
+    return max(pairList)
+    
+    
         
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
