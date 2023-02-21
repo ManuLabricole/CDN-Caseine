@@ -26,7 +26,6 @@ def tarif_carte(carte:str) -> float:
     else:
         print("Carte inconnue")
         return None
-    pass
 
 def reduc_carte(carte:str, periode:str) -> float:
     
@@ -44,8 +43,30 @@ def reduc_carte(carte:str, periode:str) -> float:
     else:
         print("Carte inconnue")
         return None
-
+    
+def plein_tarif(city1, city2):
+    city = [city1, city2]
+    if("Grenoble" in city and "Lyon" in city): 
+        return float(20)
         
+    elif("Grenoble" in city and "Paris" in city):
+        return float(100)
+        
+    elif("Lyon" in city and "Paris" in city):
+        return float(80)
+    else:
+        print("Trajet inconnu")
+        return None
+        
+def reduc_modifiable(is_modifiable:bool) -> float:
+    if is_modifiable:
+        return None
+    else:
+        return float(0.1)
+    
+def tarif_billet(city1:str, city2:str, modifiable=True:bool, ):
+    
+    return prix
         
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
@@ -53,4 +74,5 @@ if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # les appels de votre choix.
     # Respectez bien ce niveau d'identation.
     print("Debut du prog. principal")
-
+    plein_tarif("Paris", "Lyon")
+    plein_tarif("Grenoble", "Grenoble")
