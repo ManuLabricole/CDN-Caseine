@@ -17,5 +17,16 @@ else:
         number = float(input("Nombre ? "))
         numberList.append(number)
 
-    if (all(val > 0 for val in numberList)):
+    if (all(val >= 0 for val in numberList)):
         print("Tous +")
+    elif (all(val <= 0 for val in numberList)):
+        print("Tous -")
+
+    else:
+        print("Ni tous +, ni tous -.")
+        if sum(numberList) > 0:
+            print("Somme +.")
+        elif sum(numberList) < 0:
+            print("Somme -.")
+        else:
+            print("Somme = 0.")
