@@ -36,16 +36,11 @@ def prix_menu(menuName:str, avecBoisson:bool=False, nb_supplement:int=0) -> floa
     return prix
 
 def table_Dupont() -> float:
-    prix_menu("Basique")
-    prix_menu("Gourmand", avecBoisson=True)
-    prix_menu("Basique", nb_supplement=2)
-    prix_menu("Basique", avecBoisson=True, nb_supplement=1)
+    prix = prix_menu("Basique") + prix_menu("Gourmand", avecBoisson=True) + prix_menu("Basique", nb_supplement=2) + prix_menu("Basique", avecBoisson=True, nb_supplement=1)
+    
+    return prix
 
 if __name__=="__main__":
     print("Debut du prog. principal")
-    print(prix_menu("Basique", True))
-    
-
-
-
-
+    print(prix_menu("Basique", True))    
+    print(prix_menu("Gourmand", avecBoisson=True))    
