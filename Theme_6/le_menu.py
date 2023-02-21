@@ -9,7 +9,7 @@
 #         Johanna a choisi un menu Basique avec suppléments fromage et café,
 #         et Antoine a choisi un menu Basique avec boisson et supplément café.
 
-#  (Exercice proposé par Aurélie Lagoutte)
+#  (Exercice proposé par Aurélie Lagoutte);
 
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
