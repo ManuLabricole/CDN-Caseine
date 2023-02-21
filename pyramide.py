@@ -55,8 +55,9 @@ def sphinx_aime(p):
         return False
     
 def code_hall(p):
-    if sphinx_aime(p):
-        return p
+    while (sphinx_aime(p) == False):
+        p += 1
+    return p
 
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
