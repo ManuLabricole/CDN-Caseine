@@ -72,7 +72,20 @@ def double_consonne(mot:str):
 def envers(List:list) -> list: 
   return list(reversed(List))
 
-        
+def palindrome(mot:str) -> bool:
+    listMot = list(mot)
+    
+    if listMot == envers(listMot):
+        return True
+    else:
+        return False   
+    
+def mot_autorise(mot, listInterdit:str) -> bool:
+    autorise = True
+    if mot in listInterdit:
+        autorise = False
+    
+    return autorise
         
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
