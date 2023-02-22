@@ -3,10 +3,6 @@
 # Ensuite Save + Run puis Save + Evaluate
 # Pour des raisons techniques, laissez une ligne blanche avant de commencer votre programme.
 
-
-
-
-
 def separe(ligne):
     ligne=ligne.strip() # permet d'enlever un éventuel \n et/ou des espaces a la fin de la ligne
     liste_donnees=ligne.split(" ") # separe la ligne a chaque fois qu'un espace est rencontré
@@ -66,11 +62,44 @@ def imc_moyen(listPatient:list) -> float:
 
 def liste_noms_patients_en_corpulence_normale(listPatient:list) -> list:
     listPatientNorm = []
+    
     for patient in listPatient:
         if imc(patient) >= 18.5 and imc(patient) <= 25:
             listPatientNorm.append(patient["nom"])    
     
     return listPatientNorm
+
+
+def produire_chaine(patient:dict) -> str:
+    print("produit chaine...")
+    chainePatient = str(patient["nom"] + " " + str(imc(patient=patient)) + "\n")
+    
+    return chainePatient
+
+def ecrire_imc(listPatient:list, fichierName:str) -> None:
+    fichier = open(fichierName, "w")  
+    
+    for patient in listPatient:
+        textToWrite = produire_chaine(patient)
+        fichier.write(textToWrite)
+        
+    fichier.write("IMC Moyen : " + str(imc_moyen(listPatient=listPatient)))
+    fichier.write("\nNoms des patients en corpulence normale :\n")
+    
+    for patientNorm in liste_noms_patients_en_corpulence_normale(listPatient=listPatient):
+        fichier.write(patientNorm + "\n")
+    
+    fichier.close()
+    
+    return None
+    
+def traitement_complet_donnees(fichierSource:str, outputFile:str) -> None:
+        
+    listPatient = liste_patients_from_nom_fichier(nomFichier=fichierSource)
+    ecrire_imc(listPatient=listPatient, fichierName=outputFile)
+    
+    return None
+
         
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
@@ -81,6 +110,11 @@ if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     
     print("Test de la fonction affiche_console")
     #affiche_console("resultats-donnees1.txt")
-    ListPatient = import_lignes("donnees1.txt")
-    cree_patient(ListPatient[0])
+    
+    listPatient = liste_patients_from_nom_fichier(nomFichier="donnees1.txt")
+
+    ecrire_imc(listPatient=listPatient, fichierName="data.txt")
+    
+
+
    

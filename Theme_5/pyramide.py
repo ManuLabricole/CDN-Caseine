@@ -97,6 +97,6 @@ if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Fin de vos tests
     # Ci-dessous: programme qui simule votre entree dans la pyramide
     # Vous devez juste appuyer sur Entree lorsque l'on vous le demande.
-    import pyramide
+    import Theme_5.pyramide as pyramide
     # pyramide.entre() # Vous pouvez commenter cette ligne si vous le voulez.
     print(osiris_aime(31))

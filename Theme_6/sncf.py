@@ -79,10 +79,8 @@ def tarif_billet(city1, city2, modifiable=True, carte=None, periode=None):
         if prixCarte is not None and reducCarte is not None:
             prix -= prix*reducCarte
         else:
-            pass
-        
-        if reducModifiable is not None:
-            prix -= prix*reducModifiable
+            if reducModifiable is not None:
+                prix -= prix*reducModifiable
             
         return prix    
         

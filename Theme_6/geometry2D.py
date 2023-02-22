@@ -30,7 +30,7 @@ def coordDEF():
     yE = E[1]
     
     D = coord_centre_cercle(x1=xA, y1=yA, x2=xB, y2=yB)
-    xD = D[0]
+    xD = D[0]       
     yD = D[1]
     F = coord_centre_cercle(x1=xE, y1=yE, x2=xC, y2=yC)
     xF = F[0]
