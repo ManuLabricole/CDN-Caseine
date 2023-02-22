@@ -83,6 +83,22 @@ def total(stock:dict) -> int:
     
     return totalFruit
 
+def quantite(stock:dict, fruitList:list) -> int:
+    quantiteFruits = 0
+    
+    for fruit in fruitList:
+        if fruit in stock:
+            quantiteFruits += stock[fruit]
+        else:
+            pass
+    
+    return quantiteFruits
+
+def quantite_agrumes(stock:dict) -> int:
+    agrumes=['orange', 'citron', 'mandarine', 'clementine', 'pamplemousse']
+    
+    return quantite(stock=stock, fruitList=agrumes)
+
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
     # Utilisez-le pour tester votre programme en faisant
