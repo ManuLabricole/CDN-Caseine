@@ -17,6 +17,17 @@ def commence_par(lettre:str, mot:str) -> bool:
     else:
         raise ValueError("Empty string")
 
+def contient_voyelle(mot:str) -> bool:
+    voyelleList = ["a", "e", "i", "o", "u", "y"]
+    listMot = list(mot)
+    
+    for el in voyelleList:
+        print(el)
+        if el in listMot:
+            print(el + "is in " + mot)
+            return True
+        else:
+            return False
         
         
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
@@ -33,6 +44,6 @@ if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
 
     print(commence_par("a", "voiture"))  
     print(commence_par("a", "abri"))
-
+    contient_voyelle("tortue")
 
 
