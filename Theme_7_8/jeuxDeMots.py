@@ -82,6 +82,7 @@ def palindrome(mot:str) -> bool:
     
 def mot_autorise(mot, listInterdit:str) -> bool:
     autorise = True
+    
     if mot in listInterdit:
         autorise = False
     
