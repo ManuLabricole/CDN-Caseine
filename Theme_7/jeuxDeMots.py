@@ -69,8 +69,7 @@ def double_consonne(mot:str):
     
     return (False, None)
     
-def envers(List:list) -> list:
-  
+def envers(List:list) -> list: 
   return list(reversed(List))
 
         
