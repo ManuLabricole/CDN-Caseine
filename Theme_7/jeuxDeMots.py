@@ -3,8 +3,19 @@
 # Ensuite Save + Run puis Save + Evaluate
 # Pour des raisons techniques, laissez une ligne blanche avant de commencer votre programme.
 
+voyelleList = ["a", "e", "i", "o", "u", "y"]
 
-
+def commence_par(lettre:str, mot:str) -> bool:
+    listMot = list(mot)
+    
+    if len(listMot) > 0:
+        if listMot[0] == lettre:
+            return True
+        else:
+            return False
+    
+    else:
+        raise ValueError("Empty string")
 
         
         
@@ -20,6 +31,8 @@ if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     test=list(mot)
     print(test)
 
+    print(commence_par("a", "voiture"))  
+    print(commence_par("a", "abri"))
 
 
 
