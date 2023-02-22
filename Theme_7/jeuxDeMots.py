@@ -3,7 +3,6 @@
 # Ensuite Save + Run puis Save + Evaluate
 # Pour des raisons techniques, laissez une ligne blanche avant de commencer votre programme.
 
-voyelleList = ["a", "e", "i", "o", "u", "y"]
 
 def commence_par(lettre:str, mot:str) -> bool:
     listMot = list(mot)
@@ -16,18 +15,64 @@ def commence_par(lettre:str, mot:str) -> bool:
     
     else:
         raise ValueError("Empty string")
+    
+def is_voyelle(letter:str) -> bool:
+    voyelleList = ["a", "e", "i", "o", "u", "y"]
+    
+    if letter in voyelleList:
+        return True
+    else:
+        return False
 
 def contient_voyelle(mot:str) -> bool:
-    voyelleList = ["a", "e", "i", "o", "u", "y"]
+
     listMot = list(mot)
+    boolValue = False
     
-    for el in voyelleList:
-        print(el)
-        if el in listMot:
-            print(el + "is in " + mot)
-            return True
+    for letter in listMot:
+        
+        if is_voyelle(letter):
+            boolValue = True
         else:
-            return False
+            pass
+
+    return boolValue
+
+def get_consonne_index(mot:str) -> list:
+    listMot = list(mot)
+    indexConsonne = list()
+    
+    for i in range(0, len(listMot)):
+        if is_voyelle(listMot[i]):
+            pass
+        else:
+            indexConsonne.append(i)
+            
+    return indexConsonne
+
+def derniere_consonne(mot:str) -> tuple:
+    
+    indexConsonne = get_consonne_index(mot)
+    
+    if indexConsonne is not None:
+        return max(indexConsonne), list(mot)[max(indexConsonne)]
+    else:
+        return None
+
+def double_consonne(mot:str):
+    listMot = list(mot)
+    indexConsonne = get_consonne_index(mot)
+    
+    for i in range(0, len(indexConsonne)-1):
+        if (indexConsonne[i+1]-indexConsonne[i] == 1) and listMot[indexConsonne[i+1]] == listMot[indexConsonne[i]] :
+            return True, listMot[indexConsonne[i]]
+    
+    return (False, None)
+    
+def envers(List:list) -> list:
+  
+  return list(reversed(List))
+
         
         
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
@@ -38,12 +83,6 @@ if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     print("Debut du prog. principal")
     
     # Exemple de transformation d'un mot en liste
-    mot="bonjour"
-    test=list(mot)
-    print(test)
 
-    print(commence_par("a", "voiture"))  
-    print(commence_par("a", "abri"))
-    contient_voyelle("tortue")
-
+    print(double_consonne("reussite"))
 
