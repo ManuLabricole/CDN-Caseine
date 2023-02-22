@@ -51,7 +51,38 @@ def enleve(stock:dict, fruit:str, quantite:int) -> dict:
 
     return newStock
         
+def apres_livraison(stock: dict,  livraison:dict) -> dict:
+    
+    newStock = dict(stock)
+    
+    for fruit in livraison:
+        newStock = ajoute(stock=newStock, fruit=fruit, quantite=livraison[fruit])
+    
+    return newStock
         
+def commande(stock:dict, stockVoulu:dict) -> dict:
+    
+    stockCommande = {}
+    
+    for fruit in stockVoulu:
+        if fruit in stock:
+            if stock[fruit] < stockVoulu[fruit]:
+                stockCommande[fruit] = stockVoulu[fruit] - stock[fruit]
+            else:
+                pass
+        
+        else:
+            stockCommande[fruit] = stockVoulu[fruit]
+                
+    return stockCommande
+
+def total(stock:dict) -> int:
+    totalFruit = 0
+    for fruit in stock:
+        totalFruit += stock[fruit]
+    
+    return totalFruit
+
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Votre programme principal ne sera pas évalué.
     # Utilisez-le pour tester votre programme en faisant
