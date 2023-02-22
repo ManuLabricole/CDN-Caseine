@@ -14,6 +14,42 @@ def ajoute1(stock:dict, fruit:str) -> dict:
     
     return newStock
 
+def enleve1(stock:dict, fruit:str) -> dict:
+    newStock = dict(stock)
+    
+    if fruit in newStock:
+        if newStock[fruit] > 1:
+            newStock[fruit] -= 1
+        elif newStock[fruit] == 1:
+            del newStock[fruit]
+    
+    else:
+        print(f'Quantite insuffisante de {fruit}')
+         
+    return newStock
+
+def ajoute(stock:dict, fruit:str, quantite:int) -> dict:
+    
+    newStock = dict(stock)
+    
+    for i in range(quantite):
+        newStock = ajoute1(newStock, fruit)
+
+    return newStock
+
+def enleve(stock:dict, fruit:str, quantite:int) -> dict:
+    
+    newStock = dict(stock)
+    
+    if fruit in newStock and newStock[fruit] >= quantite:
+    
+        for i in range(quantite):
+            newStock = enleve1(newStock, fruit)
+            
+    else:
+        print(f'Quantite insuffisante de {fruit}')
+
+    return newStock
         
         
 if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
@@ -23,7 +59,7 @@ if __name__=="__main__": # NE PAS SUPPRIMER CETTE LIGNE
     # Respectez bien ce niveau d'identation.
     print("Debut du prog. principal")
     agrumes=['orange', 'citron', 'mandarine', 'clementine', 'pamplemousse']
-
+    print(enleve1({'pomme' : 2, 'banane' : 6, 'poire' : 1} , 'poire'))
 
 # Copier-coller des exemples:
 ##ajoute1(stock , 'pomme') renvoie {'pomme' : 3, 'banane' : 6}
